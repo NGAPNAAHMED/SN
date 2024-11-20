@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/script.js"></script>
+    <title>A propos de nous</title>
+</head>
+<body>
+    <!------------  NOTIFICATION  ------------->
+    <div class="Message">
+        <h4></h4>
+        <i class="fa fas-times"></i>
+    </div>
+
+
+
+    <header>
+        <div class="Logo">
+            <img src="style/logo1.png" alt="" id="logo">
+            <div class="Titre"> <h1> Tourist</h1> </div>
+        </div>
+        <div class="Vues">
+            <div class="Langue">
+                <i>GROUPE N°3</i>
+            </div>
+            
+            <div class="Recherche">
+                <i class="fas fa-search" onclick="AfficheSousBranche('Recherche')"></i>
+
+                <div class="Barre_recherche SousMenu slide-in">
+                    <div class="Texte"><strong>Rechercher :</strong></div>
+                    <div class="Input">
+                        <input type="text" placeholder="Entrer l'élément rechercher">
+                        <i class="fas fa-close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="Utilisateur">
+                <i class="fas fa-user-circle" onclick="AfficheSousBranche('Utilisateur')"></i>
+
+                <div class="Compte SousMenu slide-in">
+                    <div class="Texte"><strong>Aucun compte connecté</strong></div>
+                    <div class="Options">
+                        <div class="Connecter underline" onclick="AfficherConnexion()">Se connecter</div>
+                    </div>
+                </div>
+            </div>
+            <div class="Menu">
+                <i class="fas fa-bars" onclick="AfficherMenu()"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="ArrierePlanMenu" onclick="AfficherMenu()">
+        <div class="Pages">
+            <div class="Page" ><a href="index.html">Accueil</a></div>
+            <div class="Page Actuel" style="margin-top: 10%;"><a href="apropos.html">A propos de nous</a></div>
+            <div class="Page"><a href="contact.html">Contacts</a></div>
+        </div>
+    </div>
+
+
+
+    <section class="Publicite" style="margin-bottom: 5%;">
+        <div class="Affiches">
+            <div class="Affiche content show" data-content="0">
+                <h1>A propos </h4>
+                <h2>La meilleure agence de voyage</h2>
+            </div>
+        </div>
+    </section>
+
+    
+        
+        <section class="Actions" style="margin-top: 5%;">
+            <h1>Les chefs developpeurs </h1>
+            <section>
+                <div class="Action" >
+                    <div class="img"><img src="frontend/img1.jpg"alt=""></div>
+                    <span>YIAGNIGNI NGAPNA AHMED</span>
+                </div>
+                <div class="Action">
+                    <div class="img"><img src="frontend/img1.jpg" alt=""></div>
+                    <span>WAMBO NONO BRYAN</span>
+                </div>
+                <div class="Action">
+                    <div class="img"><img src="frontend/img1.jpg" alt=""></div>
+                    <span>KUMELA NYA OCEANE</span>
+                </div>
+            </section>
+        </section>
+
+
+        <section class="Actions" style="margin-top: 5%;">
+            <h1>Les chefs designeurs </h1>
+            <section>
+                <div class="Action">
+                    <div class="img"><img src="frontend/img1.jpg" alt=""></div>
+                    <span>YODJA JUSTIN JUNIOR</span>
+                </div>
+                <div class="Action">
+                    <div class="img"><img src="frontend/img1.jpg" alt=""></div>
+                    <span>BIND MAX GIOVANNI</span>
+                </div>
+                <div class="Action">
+                    <div class="img"><img src="frontend/img1.jpg" alt=""></div>
+                    <span>NANA LANDRE ARNOLD</span>
+                </div>
+            </section>
+        </section>
+
+    </section>
+
+
+
+    <footer>
+        <div class="Avis">
+            <h1>Avis :</h1>
+            <input type="text" name="" id="" placeholder="Entrer votre nom ou adresse mail">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button>Envoyer</button>
+        </div>
+        <div class="Joindre">
+            <div class="Telephone">
+                <h2>@Copyright tous droits réservés</h2>
+                
+            </div>
+        </div>
+        <div class="Reseaux">
+            <h1>Nos pages : </h1>
+            <div class="Icones">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

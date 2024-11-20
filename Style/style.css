@@ -1,0 +1,1437 @@
+:root {
+    --CP : hsl(127, 96%, 49%);
+    --CS : #ffffff;
+    --CT : gainsboro;
+    --CQ : aliceblue;
+    --CC : black;
+    --Validation-Bouton : green;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+a, a:visited, a:focus{
+    text-decoration: none;
+    color: inherit;
+    font: 1em sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: large;
+    font-weight: 400;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Animation d'apparition en glissant de la gauche vers la droite */
+.slide-in {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInRight 1s forwards;
+}
+
+.slide-in1 {
+    opacity: 0;
+    transform: translateX(-50%);
+    animation: slideInRight 1s forwards;
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation de soulignement */
+.underline {
+    position: relative;
+    display: inline-block;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.underline:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Animation de grossissement */
+.enlarge {
+    transition: font-size 0.3s ease-in-out;
+}
+
+.enlarge:hover {
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 900px) and (max-width: 1700px) {
+
+    /* ----------------------- INDEX ----------------------- */
+
+
+    header {
+        display: flex;
+        position: fixed;
+        top: 0;
+        background-color: var(--CS);
+        width: 100%;
+        height: 10vh;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--CP) transparent;
+        z-index: 1;
+    }
+
+    header.scrolled {
+        background-color: var(--CT);
+      }
+    
+    header .Logo {
+        display: flex;
+        width: 50%;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        gap:0%;
+    }
+
+    header .Titre {
+        margin-top: 18px;
+    }
+
+
+    header .Vues {
+        display: flex;
+        width: 40%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 2%;
+    }
+
+    .Vues {
+        display: flex;
+        width: 5%;
+        height: 100%;
+        font-size: 170%;
+    }
+
+    .Vues i {
+        cursor: pointer;
+    }
+
+    .Vues.Notification .Elements{
+        display: flex;
+    }
+
+    .Vues.Recherche .Barre_recherche{
+        display: flex;
+    }
+
+    .Vues.Utilisateur .Compte{
+        display: flex;
+    }
+
+    .SousMenu {
+        width: 23%;
+        height: auto;
+        position: absolute;
+        margin-top: 1%;
+        margin-left: -5%;
+        background-color: var(--CT);
+    }
+
+    .Recherche .Barre_recherche {
+        display: none;
+        flex-direction: column;
+        height: 125%;
+        z-index: 1;
+    }
+
+    .Barre_recherche .Texte {
+        display: flex;
+        font-size: x-large;
+        width: 90%;
+        height: 50%;
+        align-items: center;
+        margin-left: 5%;
+    }
+
+    .Barre_recherche .Input {
+        display: flex;
+        width: 90%;
+        height: 45%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5%;
+        border: black 1px solid;
+        border-radius: 5px;
+    }
+
+    .Barre_recherche .Input input {
+        display: flex;
+        width: 85%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border: none;
+    }
+
+    .Barre_recherche .Input input::placeholder {
+        display: flex;
+        margin-left: 5px;
+    }
+
+    .Barre_recherche .Input i {
+        display: flex;
+        width: 15%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: var(--CS);
+    }
+
+    .Elements {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        z-index: 1;
+    }
+
+    .Elements .Texte {
+        display: flex;
+        font-size: large;
+        width: 90%;
+        height: 50%;
+        align-items: center;
+        margin-left: 5%;
+        justify-content: space-between;
+        margin-top: 4%;
+        margin-bottom: 5%;
+    }
+
+    .Elements .Element {
+        display: flex;
+        width: 90%;
+        height: 95%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5px;
+        margin-left: 5%;
+        margin-top: 2%;
+        margin-bottom: 4%;
+        background-color: var(--CS);
+    }
+
+    .Elements .Element .Information {
+        font-size: small;
+        margin: 2%;
+    }
+
+    .Elements .Element i {
+        font-size: medium;
+        margin: 2%; 
+    }
+
+    .Compte {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        margin-left: -13%;
+        min-height: 15%;
+        gap: 10px;
+        z-index: 1;
+    }
+
+    .Compte .Texte {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+        font-size: large;
+        margin-top: 3%;
+    }
+
+    .Compte .Options {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 50%;
+        font-size: medium;
+        justify-content: space-evenly;
+        cursor: pointer;
+        color: var(--CP);
+        margin-bottom: 3%;
+    }
+
+    .Compte .Profil {
+        display: flex;
+        width: 95%;
+        height: 80%;
+        margin: 3%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 3%;
+    }
+
+    .Profil i {
+        display: flex;
+        width: 18%;
+        height: 100%;
+        font-size: 165%;
+        justify-content: flex-end;
+    }
+
+    .Profil .Parametre {
+        display: flex;
+        font-size: 100%;
+    }
+
+    .Profil .Identification {
+        display: flex;
+        width: 55%;
+        height: 100%;
+        flex-direction: column;
+        font-size: medium;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 4px;
+    }
+
+    .Identification .Nom {
+        font-size: large;
+    }
+
+    .Compte .Option {
+        display: flex;
+        width: 100%;
+        height: 17%;
+        font-size: medium;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: var(--CP);
+        margin-bottom: 3%;
+    }
+
+    .Pages {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25%;
+        height: 100vh;
+        gap: 2%;
+        flex-direction: column;
+        background-color: var(--CS);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        transform: translateX(120%);
+        transition: all 0.5s;
+        z-index: 1;
+    }
+
+    .Pages .Page {
+        display: flex;
+        width: 90%;
+        height: 8%;
+        margin: 4%;
+        align-items: center;
+        align-content: center;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .Pages .Page a {
+        font-size: xx-large;
+        margin-left: 4%;
+    }
+
+    .Pages .Page:hover {
+        color: black;
+        background-color: var(--CT);
+    }
+
+    .Pages .Actuel {
+        color: var(--CP);
+    }
+
+    body.Menu .Pages{
+        transform: translateX(0);
+    }
+
+    body.Menu .ArrierePlanMenu {
+        display: flex;
+    }
+
+    .ArrierePlanMenu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+
+
+
+
+    .ArrierePlanConnexion {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    body.Connecter .Connexion{
+        transform: translateX(0);
+    }
+
+    body.Connecter .ArrierePlanConnexion {
+        display: flex;
+    }
+
+    .Connexion {
+        display: flex;
+        position: absolute;
+        top: 5%;
+        left: 15%;
+        width: 70%;
+        height: 90%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1%;
+        background-color: var(--CS);
+        z-index: 1;
+        transform: translateX(150%);
+        transition: all 0.5s;
+    }
+
+    .Connexion .Titre {
+        display: flex;
+        width: 90%;
+        height: 10%;
+        font-size: xx-large;
+        font-weight: bolder;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .Connexion .Bouton {
+        display: flex;
+        width: 90%;
+        height: 10%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    
+    .Connexion .Bouton button {
+        display: flex;
+        width: 80%;
+        height: 90%;
+        border: 2px var(--Validation-Bouton) solid;
+        border-radius: 0px;
+        background-color: white;
+        justify-content: center;
+        color: var(--Validation-Bouton);
+        align-items: center;
+        text-align: center;
+        font-size: xx-large;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+    
+    .Connexion .Bouton button:hover {
+        background-color: var(--Validation-Bouton);
+        color: white;
+    }
+
+
+
+    .ArrierePlanInscription {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    body.Inscrire .Inscription{
+        transform: translateX(0);
+    }
+
+    body.Inscrire .ArrierePlanInscription {
+        display: flex;
+    }
+
+    .Inscription {
+        display: flex;
+        position: absolute;
+        top: 5%;
+        left: 15%;
+        width: 70%;
+        height: 90%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1%;
+        background-color: var(--CS);
+        z-index: 1;
+        transform: translateX(150%);
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .Inscription .Titre {
+        display: flex;
+        width: 90%;
+        height: 10%;
+        font-size: xx-large;
+        font-weight: bolder;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .Formulaire {
+        display: flex;
+        width: 90%;
+        height: 70%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        overflow-y: auto;
+    }
+    
+    .Formulaire .colonne {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+    }
+    
+    .Formulaire .colonne .InputContainer {
+        width: 47%;
+        position: relative;
+    }
+    
+    .Formulaire .colonne .InputContainer .Input {
+        position: absolute;
+        top: 10px;
+        left: 5%;
+        transition: all 0.3s;
+        pointer-events: none;
+        font-size: large;
+        color: black;
+    }
+    
+    .Formulaire .colonne .InputContainer input {
+        border: none;
+        border-bottom: 3px solid black;
+        outline: none;
+        padding: 10px;
+        transition: all 0.3s;
+        width: 100%;
+    }
+    
+    .Formulaire .colonne .InputContainer input:focus {
+        border-color: var(--Validation-Bouton);
+    }
+    
+    .Formulaire .colonne .InputContainer input:focus + .Input {
+        top: -10px;
+        font-size: small;
+        left: 5px;
+    }
+    
+    .Formulaire .colonne .InputContainer input:valid + .Input {
+        top: -10px;
+        font-size: small;
+        left: 5px;
+        color: black;
+    }
+
+    .Formulaire .colonne .InputContainer i {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        pointer-events: none;
+    }
+
+    .Formulaire .colonne .InputContainer input[type="date"] {
+        color: transparent;
+    }
+    
+    .Inscription .Bouton {
+        display: flex;
+        width: 90%;
+        height: 10%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    
+    .Inscription .Bouton button {
+        display: flex;
+        width: 80%;
+        height: 90%;
+        border: 2px var(--Validation-Bouton) solid;
+        border-radius: 0px;
+        background-color: white;
+        justify-content: center;
+        color: var(--Validation-Bouton);
+        align-items: center;
+        text-align: center;
+        font-size: xx-large;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+    
+    .Inscription .Bouton button:hover {
+        background-color: var(--Validation-Bouton);
+        color: white;
+    }
+
+
+
+
+
+
+
+
+
+    
+    .Publicite {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .Affiches {
+        display: flex;
+        width: 100%;
+        height: 60%;
+        overflow: hidden; /* Permet de cacher les images qui dépassent */
+    }
+    
+    .Publicite .Choix{
+        display: flex;
+        flex-direction: row;
+        width: 15%;
+        height: 10%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 42.5%;
+        right: 42.5%;
+    }
+
+    .Choix ul {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style-type: none;
+        gap: 4%;
+    }
+
+    .Choix ul li {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        color: var(--CS);
+        font-size: large;
+        cursor: pointer;
+    }
+
+    .Choix ul .Actuel {
+        color: var(--CC);
+        background-color: var(--CS);
+        border-radius: 50%;
+        font-size: x-large;
+        font-weight: bolder;
+    }
+    
+    .Affiches .Affiche {
+        width: 100%;
+        background-image: linear-gradient(rgba(0,0,0,0.1),#333), url("img1.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        left: 100%; /* Initiallement, les images sont en dehors de la vue */
+        transition: left 0.8s ease-in-out;
+    }
+
+    .Affiches .show {
+        left: 0; /* Affiche actuelle positionnée à gauche */
+    }
+    
+    .Affiches .Affiche h1 {
+        font-size: 450%;
+        margin-bottom: 2%;
+        color: var(--CP);
+    }
+
+    .Affiches .Affiche h2 {
+        font-size: 300%;
+        margin-bottom: 2%;
+        color: var(--CS);
+    }
+
+    .Affiches .Affiche button {
+        font-size: 20px;
+        margin-top: 2%;
+        width: 15%;
+        height: 5%;
+        font-weight: bolder;
+        color: var(--CP);
+        cursor: pointer;
+        background-color: inherit;
+        border-color: var(--CP);
+    }
+
+    .Affiches .Affiche button:hover {
+        background-color: var(--CP);
+        color: var(--CS);
+        border: none;
+    }
+
+
+    .body {
+        width: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), #333);
+    }
+      
+    .body video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+
+
+    .Infos {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3%;
+        background-color: rgba(89, 220, 66, 0.8);
+        border-top-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+    }
+
+    .Infos h1 {
+        display: flex;
+        width: 95%;
+        height: 10%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        font-size: 300%;
+    }
+
+    .Infos section {
+        display: flex;
+        width: 95%;
+        height: 87%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2%;
+    }
+
+    .Infos section .Info {
+        display: flex;
+        width: 32%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2%;
+    }
+
+    .Infos section .Info img {
+        display: flex;
+        width: 100%;
+        height: 70%;
+    }
+
+    .Infos section .Info h2 {
+        display: flex;
+        width: 100%;
+        height: 8%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        font-size: xx-large;
+    }
+
+    .Infos section .Info span {
+        display: flex;
+        width: 100%;
+        height: 25%;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        font-size: 150%;
+        text-align: center;
+    }
+
+
+
+    .Solde {
+        display: flex;
+        width: 100%;
+        height: 50vh;
+        flex-direction: column;
+        align-items: center;
+        gap: 3%;
+        background-color: var(--CQ);
+        border-radius: 10px;
+    }
+
+    .Solde .Titre {
+        display: flex;
+        width: 100%;
+        height: 28%;
+        background-color: var(--CP);
+    }
+
+    .Solde .Titre h1 {
+        display: flex;
+        width: 90%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        font-size: 300%;
+        margin-left: 3%;
+        gap: 3%;
+        color: var(--CS);
+    }
+
+
+    .Solde section {
+        display: flex;
+        width: 90%;
+        height: 65%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-size: 125%;
+    }
+
+    .Solde section i {
+        display: flex;
+        width: 15%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: 700%;
+    }
+
+    .Solde section .Info {
+        display: flex;
+        width: 85%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .Solde section .Info h1 {
+        display: flex;
+        width: 100%;
+        height: 30%;
+        justify-content: flex-start;
+        font-size: 200%;
+    }
+
+    .Solde section .Info h2 {
+        display: flex;
+        width: 100%;
+        height: 30%;
+        justify-content: flex-start;
+    }
+
+    .Solde .Lien {
+        display: flex;
+        width: 100%;
+        height: 20%;
+        background-color: var(--CT);
+        color: var(--CP);
+    }
+
+    .Solde .Lien h2 {
+        display: flex;
+        width: 90%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        font-size: 200%;
+        margin-left: 3%;
+        gap: 3%;
+        cursor: pointer;
+    }
+
+    .Solde .Lien:hover {
+        background-color: var(--CP);
+        color: var(--CS);
+    }
+
+
+
+
+
+    .Actions {
+        display: flex;
+        width: 100%;
+        height: 60vh;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--CS);
+        border-radius: 30px;
+    }
+
+    .Actions h1 {
+        display: flex;
+        width: 95%;
+        height: 20%;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        font-size: 300%;
+    }
+
+    .Actions section {
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+        height: 87%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 2%;
+    }
+
+    .Actions section .Action {
+        display: flex;
+        width: 15%;
+        height: 80%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+        gap: 3%;
+    }
+
+    .Actions section .Action:hover {
+        background-color: var(--CT);
+        border-radius: 10%;
+    }
+
+    .Actions section .Action .img {
+        display: flex;
+        width: 100%;
+        height: 66.5%;
+        justify-content: center;
+        align-items: center;
+        padding: 3%;
+        border-radius: 10%;
+        background-color: var(--CT);
+    }
+
+    .Actions section .Action .img img {
+        display: flex;
+        width: 85%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        border-radius: 50%;
+    }
+
+    .Actions section .Action span {
+        display: flex;
+        width: 100%;
+        height: 25%;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        font-size: large;
+        text-align: center;
+    }
+
+
+
+    footer {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 30vh;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        gap: 2%;
+        background-color: var(--CQ);
+        z-index: 1;
+    }
+
+    footer .Avis {
+        display: flex;
+        width: 40%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        gap: 5%;
+    }
+
+    footer .Avis input {
+        display: flex;
+        width: 100%;
+        height: 20%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    footer .Avis textarea {
+        display: flex;
+        width: 100%;
+        height: 40%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        resize: none;
+    }
+
+    footer .Avis button {
+        display: flex;
+        width: 100%;
+        height: 20%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        background-color: var(--CT);
+        border: 2px var(--CP) solid;
+        color: var(--CP);
+        font-size: large;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    footer .Avis button:hover {
+        background-color: var(--CP);
+        color: white;
+    }
+
+    footer .Avis h1 {
+        display: flex;
+        width: 100%;
+        height: 15%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    footer .Joindre {
+        display: flex;
+        width: 25%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        gap: 10%;
+    }
+
+    footer .Joindre .Telephone {
+        display: flex;
+        width: 100%;
+        height: 40%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+    }
+
+    footer .Joindre .Email {
+        display: flex;
+        width: 100%;
+        height: 40%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+    }
+
+    footer .Reseaux {
+        display: flex;
+        width: 25%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+    }
+
+    footer .Reseaux h1 {
+        display: flex;
+        width: 100%;
+        height: 20%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .Reseaux .Icones {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 200%;
+        cursor: pointer;
+    }
+
+
+
+
+
+
+    /* -------------- NOTIFICATION --------------- */
+    .Message {
+        display: flex;
+        position: absolute;
+        top: 5%;
+        left: 25%;
+        width: 50%;
+        height: auto;
+        background-color: red;
+        z-index: 2;
+    }
+
+    #logo{
+        width: 75px;
+        height: 75px;
+        border-radius: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 30px;
+    }
+
+
+
+
+
+
+
+
+
+
+    
+.contact_text1 {
+    position: absolute;
+    left: 112px;
+    top: 850px;
+    width: 411px;
+    height: 106.5px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .contact_text2 {
+    position: absolute;
+    left: 112px;
+    top: 900px;
+    width: 411px;
+    height: 106.5px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+ .info_contact {
+    position: absolute;
+    left: 112px;
+    top: 1057px;
+    width: 411px;
+    height: 211.73px;
+  }
+
+  .img1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 35px;
+    height: 35px;
+    background: #b5e742;
+    background-blend-mode: normal;
+  }
+
+  .img_text1 {
+    position: absolute;
+    left: 45px;
+    top: 7px;
+    width: 366px;
+    height: 20px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .img2 {
+    position: absolute;
+    left: 0px;
+    top: 63px;
+    width: 35px;
+    height: 35px;
+    background: #b5e742;
+    background-blend-mode: normal;
+  }
+
+  .img_text2 {
+    position: absolute;
+    left: 44px;
+    top: 70px;
+    width: 234px;
+    height: 20px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+
+  .img3 {
+    position: absolute;
+    left: 2px;
+    top: 117px;
+    width: 35px;
+    height: 35px;
+    background: #b5e742;
+    background-blend-mode: normal;
+  }
+  
+  .img_text3 {
+    position: absolute;
+    left: 47px;
+    top: 124px;
+    width: 228px;
+    height: 20px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .img4 {
+    position: absolute;
+    left: 0px;
+    top: 173px;
+    width: 35px;
+    height: 35px;
+    background: #b5e742;
+    background-blend-mode: normal;
+  }
+
+  .img_text4 {
+    position: absolute;
+    left: 37px;
+    top: 173px;
+    width: 374px;
+    height: 38.73px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+
+  .contact_text3 {
+    position: absolute;
+    left: 934px;
+    top: 850px;
+    width: 390px;
+    height: 87.14px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .contact_text4 {
+    position: absolute;
+    left: 934px;
+    top: 900px;
+    width: 390px;
+    height: 87.14px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .input1 {
+    position: absolute;
+    left: 934px;
+    top: 985px;
+    width: 390px;
+    height: 63px;
+    background: rgba(255,236,179,0.3);
+    background-blend-mode: normal;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .input2 {
+    position: absolute;
+    left: 934px;
+    top: 1067px;
+    width: 390px;
+    height: 63px;
+    background: rgba(255,236,179,0.3);
+    background-blend-mode: normal;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .input3 {
+    position: absolute;
+    left: 934px;
+    top: 1158px;
+    width: 390px;
+    height: 63px;
+    background: rgba(255,236,179,0.3);
+    background-blend-mode: normal;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .input4 {
+    position: absolute;
+    left: 934px;
+    top: 1249px;
+    width: 390px;
+    height: 145px;
+    background: rgba(255,236,179,0.3);
+    background-blend-mode: normal;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+
+  .button_form {
+    position: absolute;
+    left: 1084px;
+    top: 1434px;
+    width: 90px;
+    height: 40px;
+    background: rgba(181,231,66,0.58);
+    background-blend-mode: normal;
+    color: #ffffff;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.08px;
+  }
+}
+
+
+.footer_pied {
+    position: absolute;
+    left: 0px;
+    top: 1506px;
+    width: 100%;
+    height: 278px;
+  }
+
+
+
+
+  
+
